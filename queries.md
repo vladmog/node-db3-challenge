@@ -1,5 +1,8 @@
 # Database Queries
 
+
+###########################################################################################################################################
+
     ### Display the ProductName and CategoryName for all products in the database. Shows (76) records.
 
         SELECT ProductName, CategoryName 
@@ -39,15 +42,20 @@
         WHERE o.OrderID = 10251
         ORDER BY p.ProductName
 
-
+        (3 records)
 
 ###########################################################################################################################################
 
-### Display the OrderID, CustomerName and the employee's LastName for every order. All columns should be labeled clearly. Displays 196 records.
+    ### Display the OrderID, CustomerName and the employee's LastName for every order. All columns should be labeled clearly. Displays 196 records.
 
+        SELECT OrderID, CustomerName, LastName 
+        FROM Orders as o
+        JOIN Customers as c
+        ON o.CustomerID = c.CustomerID
+        JOIN Employees as e
+        ON o.EmployeeID = e.EmployeeID
 
-
-
+        (196 records)
 
 ###########################################################################################################################################
 ###########################################################################################################################################
