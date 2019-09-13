@@ -2,7 +2,7 @@ const knex = require('knex');
 
 const config = require('../knexfile')
 
-db = knex(config.development)
+const db = knex(config.development)
 
 module.exports = {
     find,
@@ -30,7 +30,6 @@ module.exports = {
 //   - On an invalid `id`, resolves to `null`.
 
     function findById(id){
-        console.log("fbID trigger")
         return db('schemes')
         .where({ id: id})
         .first()
@@ -75,7 +74,6 @@ module.exports = {
             .then(() => {
                 return findById(id)
             })
-        
     }
 
 
